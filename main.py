@@ -12,9 +12,10 @@ from forms import LoginForm
 from forms import CommentForm
 from functools import wraps
 from flask_gravatar import Gravatar
+import os
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.environ.get('SECRET')
 ckeditor = CKEditor(app)
 Bootstrap(app)
 ##CONNECT TO DB
